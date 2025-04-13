@@ -1,0 +1,58 @@
+
+<button (click)="goToListe()" class="btn btn-secondary retour-btn">
+    <i class="fas fa-arrow-left"></i> Retour à la liste
+  </button>
+  
+  <div class="container mt-5 p-4 shadow bg-white rounded">
+    <app-side-bar></app-side-bar>
+    <h1 class="text-center mb-4">Modifier un équipement</h1>
+  
+    <!-- Formulaire de modification d'équipement -->
+    <form (ngSubmit)="onSubmit()" #equipementForm="ngForm">
+      <div class="form-group mb-3">
+        <label for="nom" class="form-label">Nom de l'équipement</label>
+        <input 
+          type="text" 
+          id="nom" 
+          class="form-control" 
+          [(ngModel)]="equipement.nom" 
+          name="nom" 
+          required 
+          placeholder="Nom de l'équipement"
+        />
+      </div>
+  
+      <div class="form-group mb-3">
+        <label for="description" class="form-label">Description</label>
+        <textarea 
+          id="description" 
+          class="form-control" 
+          [(ngModel)]="equipement.description" 
+          name="description" 
+          required 
+          placeholder="Description de l'équipement"
+        ></textarea>
+      </div>
+  
+      <div class="form-group mb-3">
+        <label for="quantite" class="form-label">Quantité</label>
+        <input 
+          type="number" 
+          id="quantite" 
+          class="form-control" 
+          [(ngModel)]="equipement.quantite" 
+          name="quantite" 
+          required 
+          min="1" 
+          placeholder="Quantité disponible"
+        />
+      </div>
+  
+      <div class="text-end">
+        <button type="submit" class="btn btn-primary" [disabled]="!equipementForm.form.valid">
+          Modifier l'équipement
+        </button>
+      </div>
+    </form>
+  </div>
+  

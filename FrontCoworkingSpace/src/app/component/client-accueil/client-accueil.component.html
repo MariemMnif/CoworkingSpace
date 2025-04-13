@@ -1,0 +1,137 @@
+<div class="main-content">
+  <app-header></app-header>
+  <!-- Section Bannière -->
+  <section class="banner">
+    <div  class="banner-content">
+     
+         <h1>Bienvenue chez Coworking space</h1>
+      <p>Le meilleur espace pour vos besoins professionnels</p>
+
+    </div>
+  </section>
+  
+  <section class="elementor-section">
+    <div class="elementor-column">
+        <div class="infobox__container">
+            <div class="content__wrapper">
+                <div class="title-wrapper">
+                    <span class="icon-title">
+                        <i class="icon elementor-icon fas fa-award" aria-hidden="true"></i>
+                    </span>
+                    <h3>Qualité</h3>
+                </div>
+                <p>Nous pensons fortement que fournir une prestation de qualité n’est pas une option, mais un devoir. C’est pourquoi, nous œuvrons pour satisfaire toutes les envies de nos clients.</p>
+            </div>
+        </div>
+    </div>
+    <div class="elementor-column">
+        <div class="infobox__container">
+            <div class="content__wrapper">
+                <div class="title-wrapper">
+                    <span class="icon-title">
+                        <i class="icon elementor-icon fas fa-hand-lizard" aria-hidden="true"></i>
+                    </span>
+                    <h3>Flexibilité</h3>
+                </div>
+                <p>La flexibilité est notre façon de procéder. Nous nous adaptons à votre façon de travailler. Espaces partagés ou bureaux privatifs, nous proposons des solutions pour répondre à tous les besoins.</p>
+            </div>
+        </div>
+    </div>
+    <div class="elementor-column">
+        <div class="infobox__container">
+            <div class="content__wrapper">
+                <div class="title-wrapper">
+                    <span class="icon-title">
+                        <i class="icon elementor-icon fas fa-people-arrows" aria-hidden="true"></i>
+                    </span>
+                    <h3>Communauté</h3>
+                </div>
+                <p>Vous allez aimer travailler à Workzone ! Pourquoi ? Parce que nous cultivons le partage et nous développons le sens de collaboration. La connectivité est ce qui définit notre communauté.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+  <!-- Section Services -->
+
+  <section  class="services">
+    <h2>Nos Services</h2>
+    <div class="services-grid">
+      <div class="service-item" *ngFor="let categorie of categories">
+        <h3>{{ categorie.nom }}</h3>
+        <p>{{ categorie.description }}</p>
+        <button class="service-button" (click)="voirOffres(categorie.id)" >Voir plus</button>
+      </div>
+    </div>
+  </section>
+  
+
+<!-- Section "Ce que nous offrons" -->
+<section class="offerings">
+    <div class="offerings-container">
+      <h2 class="offerings-title">Ce que nous offrons <br>Révolutionnez votre espace de travail</h2>
+      <div class="offerings-row">
+        <!-- Solution pour les équipes -->
+        <div class="solution-box">
+          <div class="icon-wrapper">
+            <i class="icon fas fa-users"></i>
+          </div>
+          <h3 class="solution-box-title">Solution pour les équipes</h3>
+          <p class="solution-box-description">
+            Vous recherchez un espace pour travailler en équipe ?<br> Nous vous proposons des solutions personnalisées et des postes de travail dédiés à la prospérité de votre entité. De plus, vous rejoignez une communauté dynamique et créez des opportunités de networking pour vos employés.
+          </p>
+        </div>
+  
+        <!-- Solution pour les freelancers -->
+        <div class="solution-box">
+          <div class="icon-wrapper">
+            <i class="icon fas fa-laptop-code"></i>
+          </div>
+          <h3 class="solution-box-title">Solution pour Freelancer</h3>
+          <p class="solution-box-description">
+            Vous travaillez en tant que freelance ?<br> Workzone vous offre la possibilité de travailler dans un environnement confortable et entièrement équipé. Développez votre activité et gagnez en visibilité grâce à une communauté soudée. Concentrez-vous sur vos projets, nous nous occupons du reste. </p>
+        </div>
+  
+        <!-- Solution pour les startups -->
+        <div class="solution-box">
+          <div class="icon-wrapper">
+            <i class="icon fas fa-lightbulb"></i>
+          </div>
+          <h3 class="solution-box-title">Solution pour les entreprises</h3>
+          <p class="solution-box-description">
+            Les startups sont appelées à croître et à se développer. <br>Nous les aidons par la mise à disposition de solutions adaptées à toute activité et en fonction de leurs besoins.
+            De la domiciliation à la location de bureaux privés, nous garantissons un espace en temps voulu et un service avantageux.  </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Section "Ce que nos clients disent" -->
+  <section class="services">
+    <h2>Ce que nos clients disent</h2>
+    <div class="services-grid">
+      <div class="service-item" *ngFor="let feedback of feedbacks">
+        <h3>   <i class="far fa-user-circle"></i><br>
+          {{ feedback.user.nom }} {{ feedback.user.prenom }}</h3>
+        <p>
+          <ng-container *ngIf="feedback.note >= 0 && feedback.note <= 5">
+            <ng-container *ngFor="let star of getStars(feedback.note)">
+              <span [ngClass]="star === 'full' ? 'full-star' : star === 'half' ? 'half-star' : 'empty-star'">★</span>
+            </ng-container>
+          </ng-container>
+        </p>
+        
+        <p>{{ feedback.commentaire }}</p>
+
+      </div>
+    </div>
+  </section>
+  
+  <!-- Section Pourquoi nous choisir -->
+  <section class="why-choose">
+    <h2>Pourquoi choisir Coworking Space ? </h2>
+    <p> Coworking Space vous propose un espace de coworking professionnel et propice à votre réussite. Nous accueillons des créateurs d’entreprises, des freelancers indépendants ou encore des étudiants pour travailler dans un cadre motivant et dynamique.  </p>
+  </section>
+  <app-footer></app-footer>
+</div>
+
+

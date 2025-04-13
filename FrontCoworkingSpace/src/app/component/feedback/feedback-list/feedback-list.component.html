@@ -1,0 +1,25 @@
+<app-side-bar></app-side-bar>
+<div class="container mt-5 p-4 shadow bg-white rounded">
+    <h1 class="text-center mb-4">Liste des Feedbacks</h1>
+    <div class="table-responsive">
+        <table class="table table-hover">
+          <thead class="bg-primary text-white">
+            <tr>
+            <th scope="col" class="text-center">ID</th>
+            <th scope="col" class="text-center">Client</th>
+            <th scope="col" class="text-center">Note</th>
+            <th scope="col" class="text-center">Commentaire</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let feedback of feedbacks">
+            <td class="text-center">{{ feedback.id }}</td>
+            <td class="text-center">{{  feedback.user.email }}</td>
+            <td class="text-center">{{ feedback.note  }}</td>
+            <td class="text-center">{{ feedback.commentaire  }}</td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+  

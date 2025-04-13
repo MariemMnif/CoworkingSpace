@@ -1,0 +1,98 @@
+/* Assurer que le contenu principal ne soit pas sous la sidebar */
+.container {
+    margin-left: 250px;
+    margin-top: 20px;
+    padding: 20px;
+    max-width: calc(100% - 250px);
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Style du titre */
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 30px;
+    font-size: 24px;
+    font-weight: 500;
+}
+
+
+
+
+
+/* Responsivité de la table */
+.table-responsive {
+    width: 100%;
+    margin-top: 20px;
+    overflow-x: auto;
+}
+
+/* Boutons d'action */
+button {
+    margin-right: 10px;
+    padding: 10px 15px;
+    font-size: 16px;
+    background-color: #6c757d;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #495057;
+}
+
+/* Alignement des boutons "Modifier" et "Supprimer" sur la même ligne */
+.app-edit-delete {
+    display: flex;
+    gap: 10px;
+}
+
+
+
+
+
+
+/* Style des bordures et surbrillance des lignes de la table */
+.table th,
+.table td {
+    border-bottom: 1px solid #ddd;
+}
+
+.table tr:hover {
+    background-color: #f1f1f1;
+}
+
+.table th {
+    background-color: #f8f9fa;
+    color: #333;
+    font-weight: 600;
+    text-align: center;
+}
+
+/* Responsivité pour les petits écrans */
+@media (max-width: 768px) {
+    .container {
+        margin-left: 0;
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 22px;
+    }
+
+    .table th,
+    .table td {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    button {
+        font-size: 14px;
+        padding: 8px 8px;
+    }
+}

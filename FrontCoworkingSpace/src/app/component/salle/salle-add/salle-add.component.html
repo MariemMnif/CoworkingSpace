@@ -1,0 +1,119 @@
+<app-side-bar></app-side-bar>
+<button (click)="goToListe()" class="btn btn-secondary retour-btn">
+  <i class="fas fa-arrow-left"></i> Retour à la liste
+</button>
+
+<div class="container mt-5 p-4 shadow bg-white rounded">
+  <h1 class="text-center mb-4">Ajouter une salle</h1>
+
+  <!-- Formulaire de création d'une salle -->
+  <form (ngSubmit)="onSubmit()" #salleForm="ngForm">
+    
+    <!-- Ligne 1 : Nom de la salle et État de la salle -->
+    <div class="row">
+      <div class="col-md-6 mb-3">
+        <label for="nom" class="form-label">Nom de la salle</label>
+        <input
+          type="text"
+          id="nom"
+          class="form-control"
+          [(ngModel)]="salle.nom"
+          name="nom"
+          required
+          placeholder="Nom de la salle"
+        />
+      </div>
+      <div class="col-md-6 mb-3">
+        <label for="etat" class="form-label">État de la salle</label>
+        <input
+          type="text"
+          id="etat"
+          class="form-control"
+          [(ngModel)]="salle.etat"
+          name="etat"
+          required
+          placeholder="État de la salle"
+        />
+      </div>
+    </div>
+
+    <!-- Ligne 2 : Description et Capacité -->
+    <div class="row">
+      <div class="col-md-6 mb-3">
+        <label for="description" class="form-label">Description</label>
+        <textarea
+          id="description"
+          class="form-control"
+          [(ngModel)]="salle.description"
+          name="description"
+          required
+          placeholder="Description de la salle"
+        ></textarea>
+      </div>
+      <div class="col-md-6 mb-3">
+        <label for="capacite" class="form-label">Capacité</label>
+        <input
+          type="number"
+          id="capacite"
+          class="form-control"
+          [(ngModel)]="salle.capacite"
+          name="capacite"
+          required
+          min="1"
+          placeholder="Capacité de la salle"
+        />
+      </div>
+    </div>
+
+    <!-- Ligne 3 : Image et Catégorie -->
+    <div class="row">
+      <div class="col-md-6 mb-3">
+        <label class="form-label"  for="image">Image de la salle</label>
+        <input class="form-control" type="file" (change)="onFileSelected($event)" />
+        <img *ngIf="salle.image" [src]="salle.image" alt="Image de la salle" />
+      </div>
+      
+      <div class="col-md-6 mb-3">
+        <label   for="categorie" class="form-label">Catégorie</label>
+        <select
+          id="categorie"
+          class="form-control"
+          [(ngModel)]="salle.categorie"
+          name="categorie"
+          required
+          
+        >  
+        <option value="" disabled selected>Sélectionner une catégorie</option>
+          <option *ngFor="let categorie of categories" [value]="categorie.id">
+            {{ categorie.nom }}
+          </option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Ligne 4 : Équipements disponibles -->
+    <div class="row">
+      <div class="col-md-12 mb-3">
+        <label for="equipements" class="form-label">Équipements disponibles</label>
+        <select
+          id="equipements"
+          class="form-control"
+          [(ngModel)]="salle.equipements"
+          name="equipements"
+          multiple
+        >
+          <option *ngFor="let equipement of equipements" [value]="equipement.id">
+            {{ equipement.nom }}
+          </option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Bouton de soumission -->
+    <div class="text-end">
+      <button type="submit" class="btn btn-primary" [disabled]="!salleForm.form.valid">
+        Ajouter la salle
+      </button>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,74 @@
+.container {
+    margin-left: 250px;
+    margin-top: 120px !important;
+    padding: 20px;
+    max-width: calc(100% - 250px);
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    font-size: 28px;
+    font-weight: bold;
+    color: #333;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    font-size: 16px;
+    font-weight: 500;
+    color: #333;
+}
+
+input,
+textarea {
+    font-size: 14px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+textarea {
+    resize: vertical;
+}
+
+button {
+    font-size: 16px;
+    padding: 10px 20px;
+    background-color: #495057;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+.text-end {
+    text-align: right;
+}
+
+.retour-btn {
+    position: fixed;
+    top: 60px;
+    left: 380px;
+    z-index: 9999;
+    border-radius: 5px;
+    font-size: 16px;
+    padding: 10px 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    background-color: #495057;
+    color: white;
+}

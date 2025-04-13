@@ -1,0 +1,53 @@
+<app-side-bar></app-side-bar>
+<div class="container mt-5 p-4 shadow bg-white rounded">
+  <h2 class="text-center mb-4">Liste des clients</h2>
+
+  <!-- Barre de recherche -->
+  <div class="input-group mb-3">
+    <input
+      type="text"
+      class="form-control"
+      placeholder="Rechercher un utilisateur par email"
+      [(ngModel)]="searchTerm"
+      (input)="onSearch()"
+    />
+    <span class="input-group-text">
+      <i class="fas fa-search"></i>
+    </span>
+  </div>
+ <!-- Bouton Ajouter un équipement -->
+ <div class="text-end mb-4">
+  <button class="btn btn-success" (click)="onAddUser()">
+    <i class="fas fa-plus"></i> Ajouter un cient
+  </button>
+</div>
+  <!-- Tableau des utilisateurs -->
+  <div class="table-responsive">
+    <table class="table table-hover">
+      <thead class="bg-primary text-white">
+        <tr>
+          <th scope="col" class="text-center">Nom</th>
+          <th scope="col" class="text-center">Prénom</th>
+          <th scope="col" class="text-center">Email</th>
+          <th scope="col" class="text-center">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Utilisez filteredUsers ici -->
+        <tr *ngFor="let user of filteredUsers">
+          <td class="text-center">{{ user.nom }}</td>
+          <td class="text-center">{{ user.prenom }}</td>
+          <td class="text-center">{{ user.email }}</td>
+          <td class="text-center">
+            <button class="btn btn-warning btn-sm me-2" (click)="onEditUser(user.id)">
+              <i class="fas fa-edit"></i>
+            </button>
+            <button class="btn btn-danger btn-sm" (click)="deleteUser(user.id)">
+              <i class="fas fa-trash"></i>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

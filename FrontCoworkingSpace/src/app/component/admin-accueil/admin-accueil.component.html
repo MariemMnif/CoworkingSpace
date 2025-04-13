@@ -1,0 +1,64 @@
+<app-side-bar></app-side-bar>
+
+<div class="container admin-accueil">
+  <div class="dashboard-stats">
+
+    <!-- Feedbacks Card -->
+    <div class="stat-card feedback">
+      <div   class="stat-header">
+        <h3  >Feedbacks</h3>
+      </div>
+      <div class="stat-body">
+        <p class="text-center" ><strong>Nombre de feedbacks :</strong> {{ feedbacks.length }}</p>
+        <p class="text-center" *ngIf="feedbacks.length === 0" class="no-data">Aucun feedback disponible</p>
+      </div>
+    </div>
+
+    <!-- Offres Card -->
+    <div class="stat-card offers">
+      <div class="stat-header">
+  
+        <h3 class="text-center">Offres</h3>
+      </div>
+      <div class="stat-body">
+        <p class="text-center" ><strong>Nombre d'offres :</strong> {{ offres.length }}</p>
+        <p class="text-center" *ngIf="offres.length === 0" class="no-data">Aucune offre disponible</p>
+      </div>
+    </div>
+
+    <!-- Réservations Card -->
+    <div class="stat-card reservations">
+      <div class="stat-header">
+  
+        <h3 class="text-center" >Réservations</h3>
+      </div>
+      <div class="stat-body">
+        <p class="text-center" ><strong>Nombre de réservations :</strong> {{ reservations.length }}</p>
+        <p class="text-center" *ngIf="reservations.length === 0" class="no-data">Aucune réservation disponible</p>
+      </div>
+    </div>
+
+    <!-- Clients Card -->
+    <div class="stat-card clients">
+      <div class="stat-header">
+        <h3 class="text-center" >Clients</h3>
+      </div>
+      <div class="stat-body">
+        <p class="text-center" ><strong>Nombre de clients :</strong> {{ users.length }}</p>
+        <p class="text-center" *ngIf="users.length === 0" class="no-data">Aucun client disponible</p>
+      </div>
+    </div>
+
+    <!-- Nouvelle réservation Card -->
+    <div class="stat-card new-reservation">
+      <div class="stat-header">
+        <h3 class="text-center" >Nouvelle Réservation</h3>
+      </div>
+      <div class="stat-body">
+        <p class="text-center"><strong>Nombre de nouvelles réservations :</strong> {{ newReservations.length }}</p>
+        <p class="text-center" *ngIf="newReservations.length === 0" class="no-data">Aucune nouvelle réservation disponible</p>
+      </div>
+    </div>
+
+  </div>
+</div>

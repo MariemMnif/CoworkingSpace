@@ -1,0 +1,62 @@
+
+<div class="container mt-5 p-4 shadow bg-white rounded">
+  <app-side-bar></app-side-bar>
+    <!-- Titre principal -->
+    <h1 class="text-center mb-4">Liste des Équipements</h1>
+  
+    <!-- Barre de recherche -->
+    <div class="input-group mb-3">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Rechercher un équipement par nom"
+        [(ngModel)]="searchTerm"
+        (input)="onSearch()"
+      />
+      <span class="input-group-text">
+        <i class="fas fa-search"></i>
+      </span>
+    </div>
+  
+    <!-- Bouton Ajouter un équipement -->
+    <div class="text-end mb-4">
+      <button class="btn btn-success" (click)="onAddEquipement()">
+        <i class="fas fa-plus"></i> Ajouter un équipement
+      </button>
+    </div>
+  
+    <!-- Tableau des équipements -->
+    <div class="table-responsive">
+      <table class="table table-hover">
+        <thead class="bg-primary text-white">
+          <tr>
+            <th scope="col" class="text-center">Nom</th>
+            <th scope="col" class="text-center">Description</th>
+            <th scope="col" class="text-center">Quantité</th>
+            <th scope="col" class="text-center">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let equipement of filteredEquipements">
+            <td class="text-center">{{ equipement.nom }}</td>
+            <td>{{ equipement.description }}</td>
+            <td class="text-center">{{ equipement.quantite }}</td>
+            <td class="text-center">
+              <!-- Conteneur des boutons "Modifier" et "Supprimer" sur la même ligne -->
+              <div class="d-flex justify-content-center">
+                <!-- Bouton Modifier -->
+                <button class="btn btn-warning btn-sm me-2" (click)="onEditCategory(equipement.id)" title="Modifier">
+                  <i class="fas fa-edit"></i>
+                </button>
+                <!-- Bouton Supprimer -->
+                <button class="btn btn-danger btn-sm" (click)="deleteCategory(equipement.id)" title="Supprimer">
+                  <i class="fas fa-trash-alt"></i>
+                </button>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  

@@ -1,0 +1,59 @@
+
+<div class="container mt-5 p-4 shadow bg-white rounded">
+  <app-side-bar></app-side-bar>
+  <!-- Titre principal -->
+  <h1 class="text-center mb-4">Liste des Catégories</h1>
+
+  <!-- Barre de recherche -->
+  <div class="input-group mb-3">
+    <input
+      type="text"
+      class="form-control"
+      placeholder="Rechercher une catégorie par nom"
+      [(ngModel)]="searchTerm"
+      (input)="onSearch()"
+    />
+    <span class="input-group-text">
+      <i class="fas fa-search"></i>
+    </span>
+  </div>
+
+  <!-- Bouton Ajouter une catégorie -->
+  <div class="text-end mb-4">
+    <button class="btn btn-success" (click)="onAddCategory()">
+      <i class="fas fa-plus"></i> Ajouter une catégorie
+    </button>
+  </div>
+
+  <!-- Tableau des catégories -->
+  <div class="table-responsive">
+    <table class="table table-hover">
+      <thead class="bg-primary text-white">
+        <tr>
+          <th scope="col" class="text-center">Nom</th>
+          <th scope="col" class="text-center">Description</th>
+          <th scope="col" class="text-center">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let categorie of filteredCategories">
+          <td class="text-center">{{ categorie.nom }}</td>
+          <td>{{ categorie.description }}</td>
+          <td class="text-center">
+            <!-- Conteneur des boutons "Modifier" et "Supprimer" sur la même ligne -->
+            <div class="d-flex justify-content-center">
+              <!-- Bouton Modifier -->
+              <button class="btn btn-warning btn-sm me-2" (click)="onEditCategory(categorie.id)"   title="Modifier">
+                <i class="fas fa-edit"></i> 
+              </button>
+              <!-- Bouton Supprimer -->
+              <button class="btn btn-danger btn-sm " (click)="deleteCategory(categorie.id)"  title="Supprimer">
+                <i class="fas fa-trash-alt "></i> 
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

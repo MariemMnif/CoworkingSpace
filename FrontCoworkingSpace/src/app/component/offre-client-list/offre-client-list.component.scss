@@ -1,0 +1,171 @@
+/* Banner Section */
+.banner {
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #555;
+    text-align: center;
+    padding: 50px;
+    /* Padding général (haut, bas, gauche, droite) */
+    padding-left: 50px;
+    /* Espacement à gauche */
+    padding-right: 50px;
+    /* Espacement à droite */
+    margin-top: 80px;
+    background-color: #f9f9f9;
+
+
+}
+
+.banner-content h2 {
+    font-size: 3rem;
+    margin-bottom: 25px;
+
+
+}
+
+
+
+.banner-content p {
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+    margin-left: 25px;
+    color: #555;
+    font-weight: 10;
+
+}
+
+
+.main-content {
+    position: absolute;
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+
+
+}
+
+
+.infobox__container {
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9;
+
+}
+
+.content__wrapper {
+    padding: 10px;
+}
+
+.title-wrapper {
+    font-size: 1.6rem;
+    /* Taille du texte */
+    margin-bottom: 20px;
+    /* Espacement sous le titre */
+    color: #E67E22;
+
+    text-align: center;
+    /* Centrer le texte du titre */
+}
+
+.icon-title {
+    margin-right: 10px;
+}
+
+h3 {
+    font-size: 1.5rem;
+    color: #333;
+}
+
+p {
+    font-size: 1rem;
+    color: #555;
+}
+
+p:last-child {
+    font-weight: bold;
+    color: #000;
+}
+
+
+/* Section principale : chaque ligne contient 3 éléments */
+.elementor-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 10px;
+    padding-left: 100px;
+    padding-right: 100px;
+    background-color: #f9f9f9;
+}
+
+/* Colonnes : chaque colonne prend 33.33% de la largeur de la section pour avoir 3 éléments par ligne */
+.elementor-column {
+    margin-bottom: 20px;
+
+    box-sizing: border-box;
+}
+
+
+/* Conteneur des infobox */
+.infobox__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Wrapper pour l'icône et le titre */
+
+
+.title-wrapper {
+    width: 100%;
+    /* Assurez-vous que le titre prend toute la largeur disponible */
+}
+
+/* Style du titre */
+.content__wrapper h3 {
+    font-size: 1.6rem;
+    /* Taille du texte */
+    margin-bottom: 20px;
+    /* Espacement sous le titre */
+    color: #2c3e50;
+    /* Couleur du texte */
+    text-align: center;
+    /* Centrer le texte dans le h3 */
+
+}
+
+/* Style de la description */
+.content__wrapper p {
+
+    font-size: 1rem;
+    color: #333;
+    line-height: 1.5;
+    text-align: left;
+    flex-grow: 2;
+}
+
+.service-button {
+    background-color: #f39c12;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+/* Effet au survol du bouton */
+.service-button:hover {
+    background-color: grey;
+}

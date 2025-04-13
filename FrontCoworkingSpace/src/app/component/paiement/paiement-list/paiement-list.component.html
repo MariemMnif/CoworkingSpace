@@ -1,0 +1,75 @@
+
+<div class="container mt-5 p-4 shadow bg-white rounded">
+  <app-side-bar></app-side-bar>
+    <h1 class="text-center mb-4">Liste des Paiements</h1>
+  
+    <!-- Barre de recherche -->
+    <div class="input-group mb-3">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Rechercher un paiement par méthode"
+        [(ngModel)]="searchTerm"
+        (input)="onSearch()"
+      />
+      
+      <span class="input-group-text">
+        <i class="fas fa-search"></i>
+      </span>
+    </div>
+    <div class="text-end mb-4">
+        <button class="btn btn-success" (click)="onAddPaiement()">
+          <i class="fas fa-plus"></i> Ajouter un paiement
+        </button>
+      </div>
+    <!-- Tableau des paiements -->
+    <div class="table-responsive">
+      <table class="table table-hover">
+        <thead class="bg-primary text-white">
+          <tr>
+            <th scope="col" class="text-center">Réservation</th>
+            <th scope="col" class="text-center">Client</th>
+            <th scope="col" class="text-center">Offre</th>
+            <th scope="col" class="text-center">Date de Paiement</th>
+            <th scope="col" class="text-center">Montant</th>
+            <th scope="col" class="text-center">Méthode de Paiement</th>
+            <th scope="col" class="text-center">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let paiement of filteredPaiements">
+            <td class="text-center">{{ paiement.reservation.id }}</td>
+            <td class="text-center">{{ paiement.reservation.user.email }}</td>
+            <td class="text-center">{{ paiement.reservation.offre.nom }}</td>
+            <td class="text-center">{{ paiement.datePaiement }}</td>
+            <td class="text-center">{{ paiement.montant }}</td>
+            <td class="text-center">{{ paiement.methodePaiement }}</td>
+            <td class="text-center">
+              <div class="d-flex justify-content-center">
+                <button
+                  class="btn btn-warning btn-sm me-2"
+                  (click)="onEditPaiement(paiement.id)"
+                  title="Modifier"
+                >
+                  <i class="fas fa-edit"></i>
+                </button>
+                <button
+                  class="btn btn-danger btn-sm"
+                  (click)="deletePaiement(paiement.id)"
+                  title="Supprimer"
+                >
+                  <i class="fas fa-trash-alt"></i>
+                </button>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  
+    <!-- Message d'erreur en cas d'échec -->
+    <div *ngIf="paiements.length === 0" class="alert alert-danger">
+      Aucune donnée disponible ou une erreur est survenue lors du chargement des paiements.
+    </div>
+  </div>
+  

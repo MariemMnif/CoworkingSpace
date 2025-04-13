@@ -1,0 +1,46 @@
+
+<div class="main-content">
+  <app-header></app-header>
+  <!-- Section Bannière -->
+  <section class="banner">
+    <div class="banner-content">
+            <h2>{{ categorieTitle}}</h2>
+            <p>{{ categorieText }}</p>
+    </div>
+  </section>
+  
+
+  <!-- Section Services -->
+
+
+  <section class="elementor-section">
+    <div *ngFor="let offre of offres" class="elementor-column">
+      <div class="infobox__container">
+        <div class="content__wrapper">
+          <div class="title-wrapper">
+        
+            <h3 class="text-center"> {{ offre.nom }}</h3>
+        </div>
+        <img *ngIf="offre.salle.image" [src]="offre.salle.image" alt="Image de la salle" style="width: 100px; height: auto;" />
+        <p><strong>Salle:</strong> {{ offre.salle.nom }}</p>
+        <p><strong>Salle:</strong> {{ offre.salle.etat }}</p>
+        <p><strong>Description:</strong> {{ offre.description }}</p> 
+        <p><strong>Prix:</strong> {{ offre.prix }} </p> 
+        <p><strong>Capacité maximale:</strong> {{ offre.capaciteMax }} personnes</p> 
+        <p><strong>Durée:</strong> {{ offre.duree }}</p> 
+        <button class="service-button" >Réserver</button>
+     
+   
+
+         
+      
+      </div>
+      </div>
+    </div>
+  </section>
+  
+
+  <app-footer></app-footer>
+</div>
+
+

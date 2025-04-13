@@ -1,0 +1,72 @@
+
+<button (click)="goToListe()" class="btn btn-secondary retour-btn">
+    <i class="fas fa-arrow-left"></i> Retour à la liste
+  </button>
+  <div class="container mt-5 p-4 shadow bg-white rounded">
+    <app-side-bar></app-side-bar>
+    <!-- Titre principal -->  
+    <h1 class="text-center mb-4">Ajouter un administrateur</h1>
+  
+    <!-- Formulaire d'ajout d'utilisateur -->
+    <form (ngSubmit)="onSubmit()" #adminForm="ngForm">
+      <div class="form-group mb-3">
+        <label for="nom" class="form-label">Nom</label>
+        <input 
+          type="text" 
+          id="nom" 
+          class="form-control" 
+          [(ngModel)]="admin.nom" 
+          name="nom" 
+          required 
+          placeholder="Nom"
+        />
+      </div>
+  
+      <div class="form-group mb-3">
+        <label for="prenom" class="form-label">Prénom</label>
+        <input 
+          type="text" 
+          id="prenom" 
+          class="form-control" 
+          [(ngModel)]="admin.prenom" 
+          name="prenom" 
+          required 
+          placeholder="Prénom"
+        />
+      </div>
+  
+      <div class="form-group mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input 
+          type="email" 
+          id="email" 
+          class="form-control" 
+          [(ngModel)]="admin.email" 
+          name="email" 
+          required 
+          placeholder="Adresse email"
+        />
+      </div>
+  
+      <div class="form-group mb-3">
+        <label for="mdp" class="form-label">Mot de passe</label>
+        <input 
+          type="password" 
+          id="mdp" 
+          class="form-control" 
+          [(ngModel)]="admin.mdp" 
+          name="mdp" 
+          required 
+          placeholder="Mot de passe"
+        />
+      </div>
+      <input type="hidden" id="role" [(ngModel)]="admin.role" name="role" value="1" />
+  
+      <div class="text-end">
+        <button type="submit" class="btn btn-primary" [disabled]="!adminForm.form.valid">
+          Ajouter l'utilisateur
+        </button>
+      </div>
+    </form>
+  </div>
+  

@@ -1,0 +1,80 @@
+
+<button  (click)="goToListe()" class="btn btn-secondary retour-btn">
+    <i class="fas fa-arrow-left"></i> Retour à la liste
+</button>
+<div class="container mt-5 p-4 shadow bg-white rounded">
+  <app-side-bar></app-side-bar>
+    <h1 class="text-center mb-4">Ajouter un Paiement</h1>
+  
+    <form (ngSubmit)="onSubmit()" #paiementForm="ngForm">
+              <!-- Réservation associée -->
+    <div class="row">
+                <!-- Nom de l'offre -->
+    <div class="col-md-6 mb-3">
+        <label for="reservation" class="form-label">Réservation</label>
+        <select
+          id="reservation"
+          class="form-control"
+          (change)="onReservationChange($event)"
+          required
+        >
+          <option *ngFor="let reservation of reservations" [value]="reservation.id">
+            {{ reservation.user.email }} - {{ reservation.offre.nom }}
+          </option>
+        </select>
+      </div>
+  
+      <!-- Montant -->
+      <div class="col-md-6 mb-3">
+        <label for="montant" class="form-label">Montant</label>
+        <input
+          type="number"
+          id="montant"
+          class="form-control"
+          [(ngModel)]="paiement.montant"
+          name="montant"
+          readonly
+          placeholder="Montant du paiement"
+        />
+      </div>
+</div>
+<div class="row">
+      <!-- Date de paiement -->
+      <div class="col-md-6 mb-3">
+        <label for="datePaiement" class="form-label">Date de Paiement</label>
+        <input
+          type="date"
+          id="datePaiement"
+          class="form-control"
+          [(ngModel)]="paiement.datePaiement"
+          name="datePaiement"
+          readonly
+        />
+      </div>
+  
+      <!-- Méthode de paiement -->
+      <div class="col-md-6 mb-3">
+        <label for="methodePaiement" class="form-label">Méthode de Paiement</label>
+        <select
+          id="methodePaiement"
+          class="form-control"
+          [(ngModel)]="paiement.methodePaiement"
+          name="methodePaiement"
+          required
+        >
+          <option value="Carte Bancaire">Carte Bancaire</option>
+          <option value="Espèces">Espèces</option>
+          <option value="Virement Bancaire">Virement Bancaire</option>
+        </select>
+      </div>
+</div>
+
+      <!-- Bouton de soumission -->
+      <div class="text-end">
+        <button type="submit" class="btn btn-primary" [disabled]="!paiementForm.form.valid">
+          Ajouter le Paiement
+        </button>
+      </div>
+    </form>
+  </div>
+  

@@ -1,0 +1,62 @@
+/* Style du header */
+.header {
+    background-color: #2c3e50;
+    /* Couleur de fond */
+    color: white;
+    /* Couleur du texte */
+    padding: 20px 0;
+    width: 100%;
+    /* S'assure que le header occupe toute la largeur */
+    position: absolute;
+    /* Fixe le header en haut de la page */
+    top: 0;
+    left: 0;
+     z-index: 1000;
+    /* Met le header au-dessus des autres éléments */
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+    /* Ombre subtile */
+}
+
+/* Conteneur pour centrer le contenu */
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    /* Centre le contenu horizontalement */
+    padding: 0 20px;
+    /* Ajoute un peu de marge latérale */
+}
+
+/* Logo */
+.header .logo h2 {
+    margin-top: 5px;
+    font-size: 25px;
+    color: white;
+
+}
+
+/* Navigation */
+.navbar ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar li {
+    margin: 0 15px;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.navbar a:hover {
+    color: #e74c3c;
+    /* Change la couleur au survol */
+}

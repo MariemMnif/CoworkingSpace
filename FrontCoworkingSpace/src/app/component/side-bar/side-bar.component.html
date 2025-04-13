@@ -1,0 +1,73 @@
+<nav class="sidebar bg-dark text-white vh-100">
+    <div class="sidebar-header text-center py-3">
+      <h3>Coworking Space</h3>
+    </div>
+    <ul class="nav flex-column">
+      <li class="nav-item">
+        <a class="nav-link text-white" routerLink="/accueil/admin" routerLinkActive="active">
+          <i class="fas fa-home"></i> Accueil
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-white" routerLink="/reservations/list" routerLinkActive="active">
+          <i class="fas fa-calendar-check"></i> Réservations
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-white" routerLink="/paiements/list" routerLinkActive="active">
+          <i class="fas fa-wallet"></i> Paiements
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-white" routerLink="/offres/list" routerLinkActive="active">
+          <i class="fas fa-box"></i> Offres
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-white" routerLink="/salles/list" routerLinkActive="active">
+          <i class="fas fa-door-open"></i> Salles
+        </a>
+        <ul class="nav flex-column ms-4 p-0"> <!-- Suppression du padding ici -->
+          <li class="nav-item mb-1"> <!-- Espacement réduit entre les items -->
+            <a class="nav-link text-white" routerLink="/salles/categorie" routerLinkActive="active">
+              <i class="fas fa-tags"></i> Catégories
+            </a>
+          </li>
+          <li class="nav-item mb-1">
+            <a class="nav-link text-white" routerLink="/salles/equipement" routerLinkActive="active">
+              <i class="fas fa-cogs"></i> Équipements
+            </a>
+          </li>
+        </ul>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link text-white" routerLinkActive="active">
+          <i class="fas fa-users"></i> Utilisateurs
+        </a>
+        <ul class="nav flex-column ms-4 p-0"> <!-- Suppression du padding ici -->
+          <li class="nav-item mb-1">
+            <a class="nav-link text-white" routerLink="/users/admin" routerLinkActive="active">
+              <i class="fas fa-user-shield"></i> Admin
+            </a>
+          </li>
+          <li class="nav-item mb-1">
+            <a class="nav-link text-white" routerLink="/users/client" routerLinkActive="active">
+              <i class="fas fa-user"></i> Client
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-white" routerLink="/feedbadk/list" routerLinkActive="active">
+          <i class="fas fa-comments"></i> Feedback
+        </a>
+      </li>
+      <li class="nav-item mt-auto">
+        <a class="nav-link text-white" href="" >
+        <i class="fas fa-sign-out-alt"></i> Déconnexion
+      </a>
+    </li>
+    </ul>
+
+  </nav>

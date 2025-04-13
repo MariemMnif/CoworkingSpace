@@ -1,0 +1,126 @@
+/* Style général de la sidebar */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100%;
+    background-color: #343a40;
+    /* Couleur de fond sombre */
+    color: #fff;
+    /* Texte blanc */
+    padding-top: 20px;
+    z-index: 1000;
+    box-shadow: 2px 0 15px rgba(0, 0, 0, 0.1);
+    /* Ombre subtile à droite */
+    transition: transform 0.3s ease;
+    /* Animation de la sidebar */
+}
+
+/* En-tête de la sidebar */
+.sidebar-header {
+    text-align: center;
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #444;
+    /* Bordure sous le logo */
+}
+
+.sidebar-header h3 {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0;
+    color: #fff;
+}
+
+/* Style des liens dans la sidebar */
+.nav-item {
+    margin-bottom: 20px;
+    /* Espacement entre les éléments */
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    color: #ddd;
+    /* Couleur du texte */
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+    /* Transition fluide */
+}
+
+.nav-link i {
+    margin-right: 15px;
+    font-size: 20px;
+}
+
+/* Survol des liens */
+.nav-link:hover {
+    background-color: #495057;
+    /* Fond plus clair au survol */
+    color: #fff;
+    /* Texte blanc au survol */
+}
+
+/* Ajout d'une couleur active pour l'élément courant */
+.nav-link.active {
+    background-color: #007bff;
+    /* Couleur de fond pour l'élément actif */
+    color: #fff;
+    font-weight: bold;
+}
+
+/* Survol de l'icône */
+.nav-link i:hover {
+    transform: scale(1.1);
+    /* Agrandissement de l'icône au survol */
+    transition: transform 0.3s ease;
+}
+
+/* Responsivité pour écrans plus petits */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+
+    .nav-item {
+        text-align: center;
+    }
+}
+
+/* Sous-menu (catégorie et équipement sous Salles, Admin et Client sous Utilisateurs) */
+.nav .nav-item .nav-link {
+    padding-left: 20px;
+}
+
+/* Sous-menu caché au départ */
+.nav .nav-item ul {
+    display: none;
+    padding-left: 20px;
+}
+
+/* Afficher les sous-menus au survol du parent */
+.nav .nav-item:hover>ul {
+    display: block;
+}
+
+/* Transition fluide pour le sous-menu */
+.nav-link {
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Amélioration de l'icône */
+.nav-link i {
+    margin-right: 20px;
+    font-size: 18px;
+}
+
+.nav-link:hover {
+    background-color: #495057;
+    color: white;
+}

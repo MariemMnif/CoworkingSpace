@@ -1,0 +1,108 @@
+
+<button (click)="goToListe()" class="btn btn-secondary retour-btn">
+    <i class="fas fa-arrow-left"></i> Retour à la liste
+  </button>
+  
+  <div class="container mt-5 p-4 shadow bg-white rounded">
+    <app-side-bar></app-side-bar>
+    <h1 class="text-center mb-4">Modifier l'offre</h1>
+  
+    <!-- Formulaire de modification de l'offre -->
+    <form (ngSubmit)="onSubmit()" #offreForm="ngForm">
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <label for="nom" class="form-label">Nom de l'offre</label>
+          <input 
+            type="text" 
+            id="nom" 
+            class="form-control" 
+            [(ngModel)]="offre.nom" 
+            name="nom" 
+            required 
+            placeholder="Nom de l'offre"
+          />
+        </div>
+  
+        <div class="col-md-6 mb-3">
+          <label for="prix" class="form-label">Prix</label>
+          <input 
+            type="number" 
+            id="prix" 
+            class="form-control" 
+            [(ngModel)]="offre.prix" 
+            name="prix" 
+            required 
+            placeholder="Prix de l'offre"
+          />
+        </div>
+      </div>
+  
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <label for="description" class="form-label">Description</label>
+          <textarea 
+            id="description" 
+            class="form-control" 
+            [(ngModel)]="offre.description" 
+            name="description" 
+            required 
+            placeholder="Description de l'offre"
+          ></textarea>
+        </div>
+  
+        <div class="col-md-6 mb-3">
+          <label for="capaciteMax" class="form-label">Capacité Max</label>
+          <input 
+            type="number" 
+            id="capaciteMax" 
+            class="form-control" 
+            [(ngModel)]="offre.capaciteMax" 
+            name="capaciteMax" 
+            required 
+            placeholder="Capacité max de l'offre"
+          />
+        </div>
+      </div>
+  
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <label for="duree" class="form-label">Durée</label>
+          <input 
+            type="text" 
+            id="duree" 
+            class="form-control" 
+            [(ngModel)]="offre.duree" 
+            name="duree" 
+            required 
+            placeholder="Durée de l'offre"
+          />
+        </div>
+  
+        <div class="col-md-6 mb-3">
+          <label for="salle" class="form-label">Salle</label>
+          <select 
+            id="salle" 
+            class="form-control" 
+            [(ngModel)]="offre.salle.id" 
+            name="salle" 
+            required
+          >
+            <option *ngFor="let salle of salles" [ngValue]="salle.id">
+              {{ salle.nom }}
+            </option>
+          </select>
+        </div>
+      </div>
+  
+      <div class="text-end">
+        <button 
+          type="submit" 
+          class="btn btn-primary" 
+          [disabled]="!offreForm.form.valid"
+        >
+          Modifier l'offre
+        </button>
+      </div>
+    </form>
+  </div>
+  

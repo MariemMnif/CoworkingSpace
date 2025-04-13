@@ -1,0 +1,124 @@
+<app-side-bar></app-side-bar>
+<button (click)="goToListe()" class="btn btn-secondary retour-btn">
+  <i class="fas fa-arrow-left"></i> Retour à la liste
+</button>
+
+<div class="container mt-5 p-4 shadow bg-white rounded">
+  <h1 class="text-center mb-4">Modifier la réservation</h1>
+
+  <form (ngSubmit)="onSubmit()" #reservationForm="ngForm">
+    <div class="row">
+      <!-- Utilisateur -->
+      <div class="col-md-6 mb-3">
+        <label for="user" class="form-label">Client</label>
+        <select
+          id="user"
+          class="form-control"
+          [(ngModel)]="reservation.user.id"
+          name="user"
+          required
+        >
+          <option *ngFor="let user of filteredUsers" [ngValue]="user.id">{{ user.email }}</option>
+        </select>
+      </div>
+
+      <!-- Salle -->
+      <div class="col-md-6 mb-3">
+        <label for="salle" class="form-label">Salle</label>
+        <select (change)="onSalleChange(reservation.offre.salle)"
+          id="salle"
+          class="form-control"
+          [(ngModel)]="reservation.offre.salle.id"
+          name="offre.salle.id"
+          required
+        >
+          <option *ngFor="let salle of salles" [ngValue]="salle.id">
+            {{ salle.nom }}
+          </option>
+        </select>
+      </div>
+    </div>
+
+    <div class="row">
+      <!-- Date de début -->
+      <div class="col-md-6 mb-3">
+        <label for="dateDebut" class="form-label">Date de début</label>
+        <input
+          type="date"
+          id="dateDebut"
+          class="form-control"
+          [(ngModel)]="reservation.dateDebut"
+          name="dateDebut"
+          required
+        />
+      </div>
+
+      <!-- Date de fin -->
+      <div class="col-md-6 mb-3">
+        <label for="dateFin" class="form-label">Date de fin</label>
+        <input
+          type="date"
+          id="dateFin"
+          class="form-control"
+          [(ngModel)]="reservation.dateFin"
+          name="dateFin"
+          required
+        />
+      </div>
+    </div>
+
+    <div class="row">
+      <!-- État de la réservation -->
+      <div class="col-md-6 mb-3">
+        <label for="etat" class="form-label">État de la réservation</label>
+        <select
+          id="etat"
+          class="form-control"
+          [(ngModel)]="reservation.etat"
+          name="etat"
+          required
+        > 
+          <option value="En attente">En attente</option>
+          <option value="Confirmée">Confirmée</option>
+          <option value="Refusée">Refusée</option>
+        </select>
+      </div>
+      <div class="col-md-6 mb-3">
+        <label for="offre" class="form-label">Offre</label>
+        <select
+          id="offre"
+          class="form-control"
+          [(ngModel)]="reservation.offre.id"
+          name="offre"
+          required
+        >
+          <option *ngFor="let offre of offres" [ngValue]="reservation.offre.id">
+            {{ offre.nom }} <!-- Remplacez par les propriétés de votre objet Offre -->
+          </option>
+        </select>
+      </div>
+    
+    </div>
+
+    <!-- Commentaire -->
+    <div class="row">
+      <div class="col-md-12 mb-3">
+        <label for="commentaire" class="form-label">Commentaire</label>
+        <textarea
+          id="commentaire"
+          class="form-control"
+          [(ngModel)]="reservation.commentaire"
+          name="commentaire"
+          placeholder="Ajouter un commentaire"
+        ></textarea>
+      </div>
+    </div>
+
+    <!-- Bouton de soumission -->
+    <div class="text-end">
+      <button type="submit" class="btn btn-primary" [disabled]="!reservationForm.form.valid">
+        Modifier la réservation
+      </button>
+    </div>
+  </form>
+</div>

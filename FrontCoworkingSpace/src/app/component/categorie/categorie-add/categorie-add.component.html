@@ -1,0 +1,45 @@
+
+<button  (click)="goToListe()" class="btn btn-secondary retour-btn">
+    <i class="fas fa-arrow-left"></i> Retour à la liste
+  </button>
+  <div class="container mt-5 p-4 shadow bg-white rounded">
+    <app-side-bar></app-side-bar>
+    <!-- Titre principal -->  
+    <h1 class="text-center mb-4">Ajouter une catégorie</h1>
+  
+    <!-- Formulaire d'ajout de catégorie -->
+    <form (ngSubmit)="onSubmit()" #categorieForm="ngForm">
+      <div class="form-group mb-3">
+        <label for="nom" class="form-label">Nom de la catégorie</label>
+        <input 
+          type="text" 
+          id="nom" 
+          class="form-control" 
+          [(ngModel)]="categorie.nom" 
+          name="nom" 
+          required 
+          placeholder="Nom de la catégorie"
+        />
+      </div>
+  
+      <div class="form-group mb-3">
+        <label for="description" class="form-label">Description</label>
+        <textarea 
+          id="description" 
+          class="form-control" 
+          [(ngModel)]="categorie.description" 
+          name="description" 
+          required 
+          placeholder="Description de la catégorie"
+        ></textarea>
+      </div>
+  
+      <div class="text-end">
+        <button type="submit" class="btn btn-primary" [disabled]="!categorieForm.form.valid">
+          Ajouter la catégorie
+        </button>
+      </div>
+    </form>
+   
+  </div>
+ 

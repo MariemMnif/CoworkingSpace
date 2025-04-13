@@ -1,0 +1,72 @@
+
+<div class="container mt-5 p-4 shadow bg-white rounded">
+  <app-side-bar></app-side-bar>
+    <h1 class="text-center mb-4">Liste des Offres</h1>
+  
+    <!-- Barre de recherche -->
+    <div class="input-group mb-3">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Rechercher une offre par nom"
+        [(ngModel)]="searchTerm"
+        (input)="onSearch()"
+      />
+      <span class="input-group-text">
+        <i class="fas fa-search"></i>
+      </span>
+    </div>
+  
+    <!-- Bouton Ajouter une offre -->
+    <div class="text-end mb-4">
+      <button class="btn btn-success" (click)="onAddOffre()">
+        <i class="fas fa-plus"></i> Ajouter une offre
+      </button>
+    </div>
+  
+    <!-- Tableau des offres -->
+    <div class="table-responsive">
+      <table class="table table-hover">
+        <thead class="bg-primary text-white">
+          <tr>
+            <th scope="col" class="text-center">Nom</th>
+            <th scope="col" class="text-center">Prix</th>
+            <th scope="col" class="text-center">Description</th>
+            <th scope="col" class="text-center">Capacité Max</th>
+            <th scope="col" class="text-center">Durée</th>
+            <th scope="col" class="text-center">Salle</th>
+            <th scope="col" class="text-center">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let offre of filteredOffres">
+            <td class="text-center">{{ offre.nom }}</td>
+            <td class="text-center">{{ offre.prix}}</td>
+            <td class="text-center">{{ offre.description }}</td>
+            <td class="text-center">{{ offre.capaciteMax }}</td>
+            <td class="text-center">{{ offre.duree }}</td>
+            <td class="text-center">{{ offre.salle?.nom }}</td>
+            <td class="text-center">
+              <div class="d-flex justify-content-center">
+                <button
+                  class="btn btn-warning btn-sm me-2"
+                  (click)="onEditOffre(offre.id)"
+                  title="Modifier"
+                >
+                  <i class="fas fa-edit"></i>
+                </button>
+                <button
+                  class="btn btn-danger btn-sm"
+                  (click)="deleteOffre(offre.id)"
+                  title="Supprimer"
+                >
+                  <i class="fas fa-trash-alt"></i>
+                </button>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  

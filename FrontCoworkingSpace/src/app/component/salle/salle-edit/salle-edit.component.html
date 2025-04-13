@@ -1,0 +1,111 @@
+<app-side-bar></app-side-bar>
+<button (click)="goToListe()" class="btn btn-secondary retour-btn">
+  <i class="fas fa-arrow-left"></i> Retour à la liste
+</button>
+
+<div class="container mt-5 p-4 shadow bg-white rounded">
+  <h1 class="text-center mb-4">Modifier la salle</h1>
+
+  <!-- Formulaire de modification de salle -->
+  <form (ngSubmit)="onSubmit()" #salleForm="ngForm">
+    <div class="row">
+      <div class="col-md-6 mb-3">
+        <label for="nom" class="form-label">Nom de la salle</label>
+        <input 
+          type="text" 
+          id="nom" 
+          class="form-control" 
+          [(ngModel)]="salle.nom" 
+          name="nom" 
+          required 
+          placeholder="Nom de la salle"
+        />
+      </div>
+      
+      <div class="col-md-6 mb-3">
+        <label for="etat" class="form-label">État</label>
+        <input 
+          type="text" 
+          id="etat" 
+          class="form-control" 
+          [(ngModel)]="salle.etat" 
+          name="etat" 
+          required 
+          placeholder="État de la salle"
+        />
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6 mb-3">
+        <label for="description" class="form-label">Description</label>
+        <textarea 
+          id="description" 
+          class="form-control" 
+          [(ngModel)]="salle.description" 
+          name="description" 
+          required 
+          placeholder="Description de la salle"
+        ></textarea>
+      </div>
+
+      <div class="col-md-6 mb-3">
+        <label for="capacite" class="form-label">Capacité</label>
+        <input 
+          type="number" 
+          id="capacite" 
+          class="form-control" 
+          [(ngModel)]="salle.capacite" 
+          name="capacite" 
+          required 
+          min="1" 
+          placeholder="Capacité de la salle"
+        />
+      </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6 mb-3">
+            <label for="image" class="form-label" >Image de la salle</label>
+            <input  class="form-control" type="file" (change)="onImageChange($event)" id="image" />
+        </div>
+        
+
+      <div class="col-md-6 mb-3">
+        <label for="categorie" class="form-label">Catégorie</label>
+        <select 
+          id="categorie" 
+          class="form-control" 
+          [(ngModel)]="salle.categorie.id" 
+          name="categorie" 
+          required
+        >
+          <option *ngFor="let categorie of categories" [value]="categorie.id">
+            {{ categorie.nom }}
+          </option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-group mb-3">
+      <label>Équipements</label>
+      <div *ngFor="let equipement of equipements">
+        <input 
+          type="checkbox" 
+          [(ngModel)]="equipement.selected" 
+          [name]="'equipement_' + equipement.id"
+        /> {{ equipement.nom }}
+      </div>
+    </div>
+
+    <div class="text-end">
+      <button 
+        type="submit" 
+        class="btn btn-primary" 
+        [disabled]="!salleForm.form.valid"
+      >
+        Modifier la salle
+      </button>
+    </div>
+  </form>
+</div>

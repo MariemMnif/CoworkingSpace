@@ -1,0 +1,365 @@
+/* Banner Section */
+.banner {
+
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    background-image: url('/assets/images/banner.jpg');
+    background-size: cover;
+    /* Ajuste l'image pour remplir le conteneur */
+    background-position: center;
+    /* Centre l'image */
+    background-repeat: no-repeat;
+    image-rendering: crisp-edges;
+}
+
+
+
+
+.banner-content h1 {
+
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.banner-content p {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.banner-content button {
+    background-color: #f5a623;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.banner-content button:hover {
+    background-color: #d98b1b;
+}
+
+
+.service-item {
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+
+.service-item h3 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+.service-item p {
+    font-size: 1.1rem;
+    color: #666;
+}
+
+/* Offerings Section */
+.offerings {
+    width: 100%;
+    /* Prendre toute la largeur de la page */
+    padding: 80px 20px;
+    // background-color: #f4f4f4;
+    text-align: center;
+    box-sizing: border-box;
+    /* Assure que le padding ne réduit pas la largeur */
+    background-color: #f9f9f9;
+}
+
+.offerings-title {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+}
+
+.offerings-row {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 40px;
+
+}
+
+.solution-box {
+    background-color: white;
+    padding: 30px;
+    width: 45%;
+    /* Vous pouvez ajuster si nécessaire */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.solution-box h3 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    color: #E67E22;
+
+}
+
+.solution-box-description {
+    font-size: 1.1rem;
+    color: #666;
+}
+
+.icon-wrapper {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: #f39c12;
+}
+
+/* Why Choose Section */
+.why-choose {
+    background-color: #333;
+    color: white;
+    padding: 50px 20px;
+    text-align: center;
+
+}
+
+.why-choose h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.why {
+    font-size: 2.5rem;
+    // margin-bottom: 0px;
+    //  color: #;
+    text-align: center;
+}
+
+.why-choose p {
+    font-size: 1.5rem;
+}
+
+.main-content {
+    // flex-grow: 1;
+    /* Permet au contenu de s'étendre pour occuper tout l'espace disponible */
+    //  padding-bottom: 0px;
+    /* Espace pour éviter que le footer chevauche le contenu */
+    position: absolute;
+    position: absolute;
+    left: 0;
+    z-index: 1000;
+    //
+}
+
+
+/* Section des services */
+.services {
+    padding: 50px 20px;
+    text-align: center;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #f9f9f9;
+}
+
+/* Titre des services */
+.services h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+/* Grille des services */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    /* Colonnes adaptatives */
+    gap: 30px;
+    justify-items: center;
+    max-width: 1200px;
+    /* Limite la largeur pour ne pas avoir des éléments trop espacés */
+    width: 100%;
+}
+
+/* Élément de service */
+.service-item {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-align: center;
+    max-width: 350px;
+    width: 100%;
+}
+
+/* Effet au survol des éléments de service */
+.service-item:hover {
+    transform: translateY(-10px);
+    /* Déplacement léger vers le haut */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Titre de chaque service */
+.service-item h3 {
+    font-size: 1.8rem;
+    color: #2c3e50;
+    /* Couleur orange */
+    margin-bottom: 15px;
+}
+
+/* Description du service */
+.service-item p {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+/* Bouton "Voir plus" */
+.service-button {
+    background-color: #f39c12;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+/* Effet au survol du bouton */
+.service-button:hover {
+    background-color: grey;
+}
+
+/////////
+/* Section de la section principale */
+.elementor-section {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 20px 20px;
+    background-color: #f9f9f9;
+}
+
+/* Colonnes de la section */
+.elementor-column {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Conteneur des infobox */
+.infobox__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: white;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Wrapper pour l'icône et le titre */
+.title-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-left: 105px;
+}
+
+/* Style de l'icône */
+.icon-title {
+    font-size: 2rem;
+    /* Taille de l'icône */
+    color: #f39c12;
+    align-items: center;
+
+}
+
+/* Style du titre */
+.content__wrapper h3 {
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+    color: #E67E22;
+    align-items: center;
+
+}
+
+/* Style de la description */
+.content__wrapper p {
+    font-size: 1rem;
+    color: #333;
+    line-height: 1.5;
+    text-align: left;
+    flex-grow: 2;
+}
+
+////
+.feedback-list {
+    padding: 2rem;
+    background-color: #f9f9f9;
+}
+
+.feedbacks {
+    list-style: none;
+    padding: 0;
+}
+
+.feedback-item {
+    background-color: #fff;
+    //   margin-bottom: 1rem;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.feedback-item strong {
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.feedback-item p {
+    font-size: 1rem;
+    color: #555;
+}
+
+.full-star {
+    color: #FFD700;
+    /* Couleur pour les étoiles pleines */
+}
+
+.half-star {
+    color: #FFD700;
+    background: linear-gradient(to left, #FFD700 50%, #ccc 50%);
+    -webkit-background-clip: text;
+    display: inline-block;
+}
+
+.empty-star {
+    color: #ccc;
+    /* Couleur pour les étoiles vides */
+}
+
+
+.fa-user-circle {
+    color: #f39c12;
+    /* Couleur de l'icône */
+    font-size: 50px;
+
+
+}
+
+app-header {
+    pointer-events: auto;
+    /* Permet les interactions avec l'en-tête */
+}
