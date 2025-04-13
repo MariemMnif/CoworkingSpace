@@ -1,0 +1,47 @@
+package com.example.projetDS.service.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+import com.example.projetDS.persistance.entities.Salle;
+import com.example.projetDS.service.interfaces.ISalle;
+
+@RestController
+@RequestMapping("/api/salle")
+@CrossOrigin(origins = "http://localhost:4200") 
+public class SalleController {
+    @Autowired
+    private ISalle salleService;
+    
+    @CrossOrigin
+    @RequestMapping(method = RequestMethod.POST, consumes="application/json", produces = "application/json")
+    public Salle createSalle(@RequestBody Salle salle) {
+        return salleService.saveSalle(salle);
+    }
+
+    @CrossOrigin
+    @PutMapping("/update")
+    public Salle updateSalle( @RequestBody Salle salle){
+        return salleService.updateSalle(salle);
+    }
+
+    @CrossOrigin
+    @GetMapping("/{id}")
+    public Salle getSalleById(@PathVariable Long id) {
+        return salleService.getSalleById(id);
+    }
+
+    @CrossOrigin
+    @GetMapping("/all")
+    public List<Salle> getAllSalles() {
+        return salleService.getAllSalles();
+    }
+
+    @CrossOrigin
+    @DeleteMapping("/delete/{id}")
+    public void deleteSalle(@PathVariable Long id) {
+        salleService.deleteSalle(id);
+    }
+}

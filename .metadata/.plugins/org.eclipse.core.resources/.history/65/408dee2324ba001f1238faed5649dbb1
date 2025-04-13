@@ -1,0 +1,21 @@
+package com.example.projetDS.service.interfaces;
+
+import java.util.List;
+
+import com.example.projetDS.persistance.entities.Offre;
+import com.example.projetDS.persistance.entities.Reservation;
+import com.example.projetDS.persistance.entities.User;
+
+public interface IReservation {
+    List<Reservation> getAllReservations();
+    Reservation getReservationById(Long id);
+    List<Reservation> getReservationByEtat(String etat);
+    Reservation createReservation(Reservation reservation);
+    Reservation updateReservation(Reservation reservation);
+    void deleteReservation(Long id);
+    List<Reservation> getReservationsByUser(User user);
+    List<Reservation> getReservationsByOffre(Offre offre);
+    Offre getOffreByIdReservation(Long id);
+    User getUserByIdReservation(Long id);
+
+}
